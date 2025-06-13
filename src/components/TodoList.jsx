@@ -4,6 +4,7 @@ import { useState } from "react";
 const TodoList = () => {
   const [task, setTask] = useState("");
   const [tasks, setTasks] = useState([]);
+  const [filter, setfilter] = useState("all");
   function handlechange(e) {
     setTask(e.target.value);
   }
@@ -55,8 +56,17 @@ const TodoList = () => {
         <button className="addbtn" onClick={addTask}>
           Add Task
         </button>
+        <div className="filter-buttons">
+          <button onClick={() => setfilter("all")}>All</button>
+          <button onClick={() => setfilter("completed")}>Completed</button>
+          <button onClick={() => setfilter("incomplete")}>Incomplete</button>
+        </div>
         <ul>
-          {tasks.map((item, index) => {
+          {tasks.filter((i)=>{
+            if(filter==="completed") return i.completed;
+            if(filter==="incomplete") return !i.completed;
+            return true;
+          }).map((item, index) => {
             return (
               <li key={index}>
                 {item.edit ? (

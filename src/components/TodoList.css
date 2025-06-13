@@ -74,3 +74,17 @@ li button {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.filter-buttons {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.filter-buttons button {
+    margin-top: 10px;
+  margin-right: 8px;
+  padding: 6px 12px;
+  background-color: rgb(235, 235, 235);
+}
+
