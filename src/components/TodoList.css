@@ -1,3 +1,51 @@
+body.light {
+    background-color: #f2f2f2;
+    color: #000;
+}
+
+body.dark {
+    background-color: #121212;
+    color: #fff;
+}
+
+body.dark .todo-wrapper {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+body.dark input[type="text"] {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+body.dark .addbtn {
+    background-color: #007bff;
+}
+
+body.dark .addbtn:hover {
+    background-color: #0056b3;
+}
+
+body.dark .statusbtn {
+    background-color: #555;
+}
+
+body.dark li {
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+body.dark .filter-buttons button {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark li button {
+    background-color: #c82333;
+}
+
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
@@ -7,11 +55,11 @@ body {
 }
 
 .todo-wrapper {
-    background: #fff;
+    background: inherit;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    width: 500px;
 }
 
 .todo-wrapper h1 {
@@ -76,15 +124,19 @@ li button {
 }
 
 .filter-buttons {
-  margin: 10px 0;
-  display: flex;
-  justify-content: space-around;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-around;
 }
 
 .filter-buttons button {
     margin-top: 10px;
-  margin-right: 8px;
-  padding: 6px 12px;
-  background-color: rgb(235, 235, 235);
+    margin-right: 8px;
+    padding: 6px 12px;
+    background-color: rgb(235, 235, 235);
 }
 
+.toggle-theme {
+    text-align: right;
+    margin-bottom: 10px;
+}
