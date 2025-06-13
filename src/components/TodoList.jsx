@@ -9,7 +9,7 @@ const TodoList = () => {
   }
   function addTask() {
     if (task === "") return;
-    setTasks([...tasks, { text: task }]);
+    setTasks([...tasks, { text: task, completed: false }]);
     setTask("");
   }
   function DeleteTask(index) {
@@ -18,6 +18,16 @@ const TodoList = () => {
     });
     setTasks(newtask);
   }
+  function TaskStatus(index) {
+    const updatedTasks = tasks.map((item, i) => {
+      if (i === index) {
+        return { ...item, completed: !item.completed };
+      }
+      return item;
+    }); 
+    setTasks(updatedTasks);
+  }
+
   return (
     <>
       <div className="todo-wrapper">
@@ -35,6 +45,9 @@ const TodoList = () => {
             return (
               <li key={index}>
                 {item.text}
+                <button className="statusbtn" onClick={() => TaskStatus(index)}>
+                  {item.completed ? "✅" : "❌"}
+                </button>
                 <button onClick={() => DeleteTask(index)}>Delete Task</button>
               </li>
             );
